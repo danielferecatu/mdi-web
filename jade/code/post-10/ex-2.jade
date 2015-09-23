@@ -1,0 +1,21 @@
+pre.c
+  code #include &lt;string.h>
+     | 
+     | strlen(&lt;var>);
+pre.c
+  code #include &lt;iostream>
+     | #include &lt;string.h>
+     | using namespace std;
+     | int main() {
+     | char s[31], t[31];
+     | 
+     | strcpy(s,"PROGRAM");
+     | strcpy(t,"PROGRAM PROGRAM PROGRAM");
+     | 
+     | cout << strlen(s) << endl;
+     | cout << strlen(t);
+     | }
+
+pre.console.nohighlight
+  code 7
+     | 23

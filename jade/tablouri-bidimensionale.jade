@@ -1,0 +1,82 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-02-18") Feb 18, 2015
+    h1 Tablouri bidimensionale (matrice)
+    p Tabloul este o colectie finită de elemente de același tip, numit tip de bază al tabloului, care ocupă un spațiu continuu de memorie.
+
+  article
+    include ./code/post-5/ex-1.jade
+
+    article
+      h2 Inițializarea unei matrice
+      include ./code/post-5/ex-2.jade
+
+    article
+      h2 Parcurgerea unei matrice #[small pe linii și coloane]
+      include ./code/post-5/ex-3.jade      
+      p #[b m] - nr. efectiv de linii
+      p #[b n] - nr. efectiv de coloane
+
+    article
+      h2 Parcurgerea unei matrice #[small pe coloane și linii]
+      include ./code/post-5/ex-4.jade
+
+    article
+      h2 Citirea unei matrice #[small cu #[b m] linii și #[b n] coloane]
+      include ./code/post-5/ex-5.jade
+
+    article
+      h2 Afișarea unei matrice #[small cu #[b m] linii și #[b n] coloane]
+      include ./code/post-5/ex-6.jade
+      p Matricea pătratică are numarul de linii egal cu numarul de coloane (m=n)
+
+    p // coloane
+    include ./code/post-5/table-const.jade
+
+    h3 Condiții construire
+
+    .construire
+      div
+        p 
+          span DP:
+          code a[i][i]
+        p 
+          span Before DP:
+          code i&lt;j
+        p 
+          span After DP:
+          code i&gt;j
+      div
+        p 
+          span DS:
+          code a[i][n-1-i]
+        p 
+          span Before DS:
+          code i+j&lt;n-1   
+        p 
+          span After DS:
+          code i+j&gt;n-1
+
+
+    article
+      h2 Parcurgerea unei matrice #[small pe diagonala principală]
+      include ./code/post-5/ex-7.jade
+
+    article
+      h2 Parcurgerea unei matrice #[small deasupra diagonalei principale]
+      include ./code/post-5/ex-8.jade
+
+    article
+      h2 Interschimbarea a 2 linii
+      include ./code/post-5/ex-9.jade
+
+    article
+      h2 Interschimbarea a 2 coloane
+      include ./code/post-5/ex-10.jade
+
+    article
+      h2 Construirea unei matrice #[small în memorie]
+      include ./code/post-5/ex-11.jade

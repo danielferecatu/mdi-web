@@ -1,0 +1,100 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-01-30") Ian 30, 2015
+    h1 Structuri de control
+    p C++ este un limbaj de programare care a apărut prin extinderea limbajului C la începutul anilor ’80 de către Bjarne Stroustrup și care, pe lângă posibilitatea programării structurate, oferă și pe cea a programării orientată pe obiecte.
+
+  article
+    h2 Teorema lui Böhm Jacopini
+    p Orice algoritm poate fi descris cu ajutorul a 3 structuri de control:
+    ol
+      li Structura liniara (secventiala)
+      li Structura alternativa (decizionala)
+      li Structura repetitiva
+
+
+    .buggy
+      a(href="#structura-liniara") Liniara
+      a(href="#structura-alternativa") Alternativa
+      a(href="#structura-repetitiva") Repetitiva
+
+    article#structura-liniara
+      h2 1. Structura liniara
+      p Structura de control care se executa neconditionat in ordinea din algoritm.
+      ol.a
+        li instructiunea de <u>citire</u>
+          include ./code/post-2/ex-1.jade
+        li instructiunea de <u>scriere</u>
+          include ./code/post-2/ex-2.jade
+        li instructiunea de <u>atribuire</u>
+          include ./code/post-2/ex-3.jade
+        li instructiunea <u>compusa</u>
+          include ./code/post-2/ex-4.jade
+          
+
+    article#structura-alternativa
+      h2 2. Structura alternativa
+      p Structura de control care executa conditionat o instructiune din 2 posibile in functie de valoarea de adevar a unei expresii.
+      include ./code/post-2/ex-5.jade
+      
+
+    article#structura-repetitiva
+      h2 3. Structura repetitiva
+
+      h3 I. Numar necunoscut de pasi
+      p Structura de control care executa repetat o secventa de instructiuni de un numar necunoscut de ori cat timp expresia este adevarata.
+
+      h4 a) Structura repetitiva cu test initial
+      include ./code/post-2/ex-6.jade
+      p <u>obs</u> - secventa se executa cat timp conditia este indeplinita; daca expresia este falsa de la inceput, secventa nu se executa.
+
+      h4 b) Structura repetitiva cu test final
+      include ./code/post-2/ex-7.jade
+      
+
+      p <u>obs</u> - secventa se executa cat timp conditia este indeplinita; daca expresia este falsa de la inceput, secventa se executa o singura data.
+      p Doua structuri repetitive sunt echivalente cand pentru aceleasi date de intrare se obtin aceleasi date de iesire.
+      p <u>obs</u> - structara repetitiva cu test initial poate fi transformata in structura cu test final si invers
+      
+      section.flip
+        header.dropHeader
+          span.expand
+          span.swap
+          p.u Structura cu test initial &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test final
+          p.d Structura cu test final &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test initial
+        .container
+          .card
+            .front
+              include ./code/post-2/flip-1-f.jade
+            .back
+              include ./code/post-2/flip-1-b.jade
+
+
+      h3 II. Numar cunoscut de pasi
+
+      h4 a) Cu contor in crestere #[code.git (vi &lt;= vf)]
+      include ./code/post-2/ex-8.jade
+      p <u>obs</u> - variabila #[code.git contor] isi modifica valoarea de la #[code.git vi] la #[code.git vf] cu #[code.git pas v > 0]; implicit #[code.git pas v = 1]; daca #[code.git vi > vf] secventa nu se executa niciodata.
+
+      h4 b) Cu contor in descrestere #[code.git (vi >= vf)]
+      include ./code/post-2/ex-9.jade
+      p <u>obs</u> - variabila #[code.git contor] isi modifica valoarea de la #[code.git vi] la #[code.git vf] cu #[code.git pas v &lt; 0]; implicit #[code.git pas v = -1]; daca #[code.git vi &lt; vf] secventa nu se executa niciodata.
+      
+      section.flip
+        header.dropHeader
+          span.expand
+          span.swap
+          p.u Structura contor &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test initial
+          p.d Structura contor &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test final
+        .container
+          .card
+            .front
+              include ./code/post-2/flip-2-f.jade
+            .back
+              include ./code/post-2/flip-2-f.jade
+          
+
+      p <u>obs</u> - o structura repetiviva cu numar necunoscut de pasi nu se poate transforma intr-o structura cu numar cunoscut de pasi, invers da.

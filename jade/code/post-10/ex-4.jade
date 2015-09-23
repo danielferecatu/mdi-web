@@ -1,0 +1,22 @@
+pre.c
+  code #include &lt;string.h>
+     | 
+     | strcmp(&lt;sir1>,&lt;sir2>);
+     | stricmp(&lt;sir1>,&lt;sir2>);
+     | strncmp(&lt;sir1>,&lt;sir2>,&lt;nr>);
+pre.c
+  code #include &lt;iostream>
+     | #include &lt;string.h>
+     | using namespace std;
+     | int main() {
+     | char *s="I Love Romania", *t="i love romania";
+     | &#09;cout << strcmp(t,s) << endl;
+     | &#09;cout << stricmp(s,t) << endl;
+     | &#09;cout << strncmp(s,t,2) << endl;
+     | &#09;cout << strnicmp(s,t,8);
+     |}
+pre.console.nohighlight
+  code 1
+     | 0
+     | -32
+     | 0

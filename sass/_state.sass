@@ -1,0 +1,34 @@
+// base
+a
+    &:hover
+        text-decoration: underline
+    &:focus
+        outline: none
+        text-decoration: underline
+    &:visited
+        color: $primary-color
+
+
+
+
+// modules/fab
+#fab
+
+    &:hover
+        @include mdElevation(2)
+        cursor: pointer
+
+    &:active
+        @include mdElevation(4)
+
+
+
+
+
+// modules/dropdown
+.expand, .swap
+
+    &:hover
+        cursor: pointer
+        border-radius: 50%
+        background-color: rgba(0, 0, 0, 0.08)

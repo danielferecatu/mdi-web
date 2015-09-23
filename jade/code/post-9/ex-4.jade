@@ -1,0 +1,15 @@
+pre.c
+  code #include &lt;iostream>
+   | #include &lt;srting.h>
+   | 
+   | void main() {
+   | 
+   | char s[64];
+   | 
+   | cout << endl << "Dati sirul: ";
+   | gets(s);
+   | 
+   | for (int i=0; i&lt;strlen(s); i++)
+   | &#09;if( s[i]>='A' &amp;&amp; s[i]&lt;='Z' ) s[i]+= 32;
+   | cout << endl << "Sirul: " << s;
+   | }

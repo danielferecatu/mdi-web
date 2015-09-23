@@ -1,0 +1,34 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-04-03") Mar 04, 2015
+    h1 Caracterele ASCII
+    p Numerele reprezintă limbajul computerelor. Pentru a comunica cu programele (și cu alte computere), computerul dvs. face conversia caracterelor și simbolurilor în reprezentările lor numerice.
+
+  p În anii 60, necesitatea standardizării a condus la Codul american standard pentru schimbul de informații (ASCII) (pronunțat aschii). Tabela ASCII conține 128 de numere asociate caracterelor corespunzătoare. ASCII furnizează o modalitate prin care computerele pot stoca și pot face schimb de date cu alte computere și programe.
+
+  article
+    h2 Caractere ASCII imprimabile
+    p Numerele de la 32–126 sunt asociate caracterelor pe care le găsiți pe tastatură și care apar atunci când vizualizați sau imprimați un document. Numărul 127 reprezintă comanda #[code.git DELETE].
+    h2 Tabela caracterelor ASCII imprimabile
+    .ascii
+      include ./code/post-8/table-ascii-1.jade
+
+    h2 Caracterele ASCII imprimabile extinse
+    p Caracterele ASCII extinse corespund necesităților pentru mai multe caractere. Setul ASCII extins cuprinde cele 128 de caractere cuprinse în ASCII (numerele 0–32 apar în tabela care urmează) și adaugă încă 128 de caractere suplimentare, totalizând 256. Chiar și cu aceste caractere suplimentare, multe limbi conțin simboluri care nu pot fi condensate în 256 de caractere. De aceea, există variante de ASCII care cuprind caractere și simboluri regionale.
+    p De exemplu, tabela ASCII cunoscută și sub numele de ISO 8859-1 este utilizată de multe programe software pentru limbile din America de Nord, Europa Occidentală, Australia și Africa.
+    a(href="https://support.office.com/ro-ro/article/Tabela-de-caractere-ASCII-d13f58d3-7bcb-44a7-a4d5-972ee12e50e0#tblID0ECBAADAAA",target="_blank") Tabela caracterelor ASCII imprimabile extinse
+  
+  article
+    h2 Caracterele ASCII neimprimabile de control
+    p Numerele de la 0 la 31 din tabela ASCII sunt atribuite caracterelor de control care se utilizează pentru a controla unele dispozitive periferice cum ar fi imprimantele. De exemplu, 12 reprezintă funcția salt de pagină/pagină nouă. Această comandă indică unei imprimante să sară la începutul paginii următoare.
+    
+    h2 Tabela caracterelor ASCII neimprimabile de control
+    .ascii
+      include ./code/post-8/table-ascii-2.jade
+
+  article
+    h2 Dincolo de ASCII
+    p O altă tabelă de caractere, mai nouă, este numită Unicode. Deoarece Unicode este o tabelă mult mai mare, ea poate reprezenta 65.536 de caractere în loc de cele 128 ale setului ASCII sau cele 256 ale setului ASCII extins. Această capacitate mai mare permite ca majoritatea caracterelor diverselor limbi să fie cuprinse într-un singur set de caractere.

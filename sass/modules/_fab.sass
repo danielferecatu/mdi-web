@@ -1,0 +1,22 @@
+#fab
+	position: fixed
+	z-index: 999
+	bottom: 24px
+	right: 36px
+
+	width: 56px
+	height: 56px
+	border-radius: 50%
+
+	background-color: $accent-color
+	background-position: center
+	background-repeat: no-repeat
+	background-size: 24px
+
+	user-select: none
+
+	@include mdElevation(1)
+	transition: all $fast ease-out
+
+	&.up
+		background-image: url(../img/ic_expand_less_24px.svg)

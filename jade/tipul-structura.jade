@@ -1,0 +1,21 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-02-18") Feb 18, 2015
+    h1 Tipul structură
+    p În C++ există un tip de date, numit #[code.git struct], care permite mai multe câmpuri de tipuri diferite numite înregistrări.
+
+  article
+    include ./code/post-7/ex-1.jade
+
+    article
+      h2 Asignarea unui nume
+      include ./code/post-7/ex-2.jade
+      p Accesul la câmpul unei structuri se face cu #[code.git .]
+      include ./code/post-7/ex-3.jade
+
+    article
+      h2 Câmpuri de tip structură
+      include ./code/post-7/ex-4.jade

@@ -1,0 +1,53 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-02-18") Feb 18, 2015
+    h1 Tablouri unidimensionale (vectori)
+    p Tabloul este o colectie finită de elemente de același tip, numit tip de bază al tabloului, care ocupă un spațiu continuu de memorie.
+
+  article
+    include ./code/post-4/ex-1.jade
+
+  article
+    h2 Operații cu vectori
+
+    article
+      h3 1. Citirea elementelor
+      include ./code/post-4/ex-2.jade
+
+    article
+      h3 2. Afișarea elementelor
+      include ./code/post-4/ex-3.jade
+
+    article
+      h3 3. Prelucrarea elementelor
+      include ./code/post-4/ex-4.jade
+
+      small ex: media elementelor pozitive din #[code.git int v[n]]
+      include ./code/post-4/ex-5.jade
+
+    article
+      h3 4. Afișarea elementelor din vector în ordine inversă
+      include ./code/post-4/ex-6.jade
+
+    article
+      h3 5. Inversarea vectorului
+      include ./code/post-4/ex-7.jade
+
+    article
+      h3 6. Inversarea vectorului în alt vector
+      include ./code/post-4/ex-8.jade
+
+    article
+      h3 7. Căutarea elementelor într-un vector
+      include ./code/post-4/ex-9.jade
+
+    article
+      h3 8. Inserarea elementului #[code.git x] pe poziția #[code.git p]
+      include ./code/post-4/ex-10.jade
+
+    article
+      h3 9. Ștergerea elementului de pe poziția #[code.git p]
+      include ./code/post-4/ex-11.jade

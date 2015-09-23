@@ -1,0 +1,12 @@
+table#matrice
+  each row in [0, 1, 2, 3]
+    tr
+      each cell in [0, 1, 2, 3]
+        - if (row==cell)
+          td.DP a #[small #{row}#{cell}]
+        - else if (row<cell)
+          td.beforeDP a #[small #{row}#{cell}]
+        - else if (row>cell)
+          td.afterDP a #[small #{row}#{cell}]
+        - else
+          td a #[small #{row}#{cell}]

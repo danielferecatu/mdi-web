@@ -1,0 +1,33 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-04-03") Mar 04, 2015
+    h1 Șiruri de caractere
+    p O constantă de tip șir de caractere se declară între caracterele #[code.git " "]. În memoria internă, o constantă de acest tip este reținută sub forma unui vector de caractere. Fiecare componentă a șirului (începând cu cea de indice 0) reține codul ASCII al caracterului pe care îl memorează.
+
+  article
+    h2 Declarare
+    include ./code/post-9/ex-1.jade
+
+    h2 Citire și afișare
+    include ./code/post-9/ex-2.jade
+
+    p Afisarea unei variabile se face cu #[code.git cout] (primul cuvant) sau #[code.git puts(&lt;var_sir>)] (intreg sirul)
+
+  article
+    h2 Transformarea caracterelor
+    p In C++ se poate face conversie implicita din #[code.git char] in #[code.git int] si invers.
+    include ./code/post-9/ex-3.jade
+
+    h2 Transformarea #[code.git Aa]
+    include ./code/post-9/ex-4.jade
+
+    h2 Compararea
+    p Compararea a 2 caractere se realizeaza cu ajutorul <a href="tipuri-de-date-operatori.html#operatori-relationali">operatorilor relationali</a>.
+    include ./code/post-9/ex-5.jade
+
+  article
+    h2 Tratarea sirurilor de caractere cu ajutorul pointerilor
+    include ./code/post-9/ex-6.jade

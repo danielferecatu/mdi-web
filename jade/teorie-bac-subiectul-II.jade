@@ -1,0 +1,267 @@
+doctype html
+html(lang="ro")
+  head
+    title= "mdi - (c)"
+    meta(charset="utf-8")
+    meta(name="author",content="Daniel Ferecatu")
+    meta(name="viewport",content="width=device-width,initial-scale=1")
+    link(href="css/index.css",rel="stylesheet",type="text/css")
+    link(rel="icon",type="image/png",href="img/favicon.png")
+  body
+    header#header
+      a(href="index.html").logo
+        img(src="img/logo.png",width="48",height="48", alt="logo")
+        span.prompt Read more posts
+
+
+    main#main
+      header
+        time(datetime="2015-02-18") Feb 18, 2015
+        h1 Teorie BAC C++ subiectul II
+
+      article
+        h1 Tablouri unidimensionale (vectori)
+        p Tabloul este o colectie finita de elemente de acelasi tip, numit tip de baza al tabloului, care ocupa un spatiu continuu de memorie.
+        pre
+          code.c int v[100];
+
+      article
+        h1 Operatii cu vectori
+
+        article
+          h3 1. Citirea elementelor
+          pre
+            code.c for (int i=0; i&lt;n; i++) { &#10;&#09;cout &lt;&lt; "v[" &lt;&lt; i &lt;&lt; "]= "; &#10;&#09;cin >> v[i]; &#10;}
+
+        article
+          h3 2. Afisarea elementelor
+          pre
+            code.c for (int i=0; i&lt;n; i++) { &#10;&#09;cout &lt;&lt; v[i]=  &lt;&lt; " "; &#10;}
+
+        article
+          h3 3. Prelucrarea elementelor
+          pre
+            code.c for (int i=0; i&lt;n; i++) { &#10;&#09;&lt;prelucreaza v[i]> &#10;}
+
+          small ex: media elementelor pozitive din int v[n]
+          pre
+            code.c s=0; &#10;nr=0; &#10;for (int i=0; i&lt;n; i++) { &#10;&#09;if ( v[i]>0 ) { &#10;&#09;&#09;s += v[i]; &#10;&#09;&#09;nr++; &#10;&#09;} &#10;} &#10;if ( nr!=0 ) { &#10;&#09;cout &lt;&lt; "ma= " &lt;&lt; float(s/nr); &#10;} &#10;else { &#10;&#09;cout  &lt;&lt; "nu exista"; &#10;}
+
+        article
+          h3 4. Afisarea elementelor din vector in ordine inversa
+          pre
+            code.c for (int i=n-1; i>0; i--) { &#10;&#09;cout  &lt;&lt; v[i] &lt;&lt; " "; &#10;}
+
+        article
+          h3 5. Inversarea vectorului
+          pre
+            code.c for (int i=0; i&lt;n/2; i++) { &#10;&#09;aux = v[i]; &#10;&#09;v[i] = v[n-1-i]; &#10;&#09;v[n-1-i] = aux; &#10;} &#10;for (int i=0; i&lt;n; i++) { &#10;&#09;cout &lt;&lt; v[i]=  &lt;&lt; " "; &#10;}
+
+        article
+          h3 6. Inversarea vectorului in alt vector
+          pre
+            code.c for (int i=0; i&lt;n; i++) { &#10;&#09;u[i] = v[n-1-i]; &#10;} &#10;for (int i=0; i&lt;n; i++) { &#10;&#09;cout &lt;&lt; v[i]=  &lt;&lt; " "; &#10;}
+
+        article
+          h3 7. Cautarea elementelor intr-un vector
+          pre
+            code.c cin >> x; &#10;g = 0; &#10;i = 0; &#10;while ( i&lt;n &amp;&amp; !g ) { &#10;&#09;if ( v[i]==x ) g = 1; &#10;&#09;else i++; &#10;}
+
+        article
+          h3 8. Inserarea elementului <code class="git">x</code> pe pozitia <code class="git">p</code>
+          pre
+            code.c n++; &#10;for ( int i=n; i>=p+1; i-- ) { &#10;&#09;v[i] = v[i-1]; &#10;} &#10;v[p] = x;
+
+        article
+          h3 9. Stergerea elementului de pe pozitia <code class="git">p</code>
+          pre
+            code.c for ( int i=p+1; i&lt;=n; i++ ) { &#10;&#09;v[i-1] = v[i]; &#10;} &#10;n--;
+
+      article
+        h1 Tablouri bidimensionale (matrice)
+        p Tabloul este o colectie finita de elemente de acelasi tip, numit tip de baza al tabloului, care ocupa un spatiu continuu de memorie.
+        pre
+          code.lang-pseudo &lt;tip_e> &lt;id_mat>[max_lin][max_col]
+        pre
+          code.c int a[3][4];
+
+        article
+          h2 Initializarea unei matrice
+          pre
+            code.c int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+          table
+            tr
+              td 1
+              td 2
+              td 3
+            tr
+              td 4
+              td 5
+              td 6
+            tr
+              td 7
+              td 8
+              td 9
+
+        article
+          h2 Parcurgerea unei matrice <small>pe linii si coloane</small>
+          pre
+            code.c for (int i=0; i&lt;m; i++) &#10;&#09;for (int j=0; j&lt;n; j++) &#10;&#09;&#09;&lt;prelucreaza a[i][j]>
+          p <b>m</b> - nr. efectiv de linii
+          p <b>n</b> - nr. efectiv de coloane
+
+        article
+          h2 Parcurgerea unei matrice <small>pe coloane si linii</small>
+          pre
+            code.c for (int j=0; j&lt;n; j++) &#10;&#09;for (int i=0; i&lt;m; i++) &#10;&#09;&#09;&lt;prelucreaza a[i][j]>
+
+        article
+          h2 Citirea unei matrice <small>cu <b>m</b> linii si <b>n</b> coloane</small>
+          pre
+            code.c cin >> m >> n; &#10;for (int i=0; i&lt;m; i++) &#10;&#09;for (int j=0; j&lt;n; j++) { &#10;&#09;&#09;cout &lt;&lt; "a[" &lt;&lt; i &lt;&lt; "][" &lt;&lt; j &lt;&lt; "]= "; &#10;&#09;&#09;cin >> a[i][j]; &#10;&#09;}
+
+        article
+          h2 Afisarea unei matrice <small>cu <b>m</b> linii si <b>n</b> coloane</small>
+          pre
+            code.c for (int i=0; i&lt;m; i++) { &#10;&#09;for (int j=0; j&lt;n; j++) &#10;&#09;&#09;cout &lt;&lt; a[i][j]  &lt;&lt; " "; &#10;&#09;cout &lt;&lt; endl; &#10;}
+          p Matricea patratica are numarul de linii egal cu numarul de coloane (m=n)
+
+        p // coloane
+
+        table#matrice
+          tr
+            td a <small>00</small>
+            td a <small>01</small>
+            td a <small>02</small>
+            td a <small>03</small>
+          tr
+            td a <small>10</small>
+            td a <small>11</small>
+            td a <small>12</small>
+            td a <small>13</small>
+          tr
+            td a <small>20</small>
+            td a <small>21</small>
+            td a <small>22</small>
+            td a <small>23</small>
+          tr
+            td a <small>30</small>
+            td a <small>31</small>
+            td a <small>32</small>
+            td a <small>33</small>
+
+        h3.caprion Conditii construire
+
+        .float(style='width: 50%;display:inline-block')
+          p DP: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            code a[i][i]
+          p Before DP: &nbsp;
+            code i&lt;j
+          p After DP: &nbsp;&nbsp;&nbsp;&nbsp;
+            code i&gt;j
+        .float(style='width: 50%;display:inline-block')
+          p DS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            code a[i][n-1-i]
+          p Before DS: &nbsp;
+            code i+j&lt;n-1   
+          p After DS:  &nbsp;&nbsp;&nbsp;&nbsp;
+            code i+j&gt;n-1
+
+
+        article
+          h2 Parcurgerea unei matrice <small>pe diagonala principala</small>
+          pre
+            code.c for (int i=0; i&lt;n; i++) &#10;&#09;&lt;prelucreaza a[i][i]>
+
+        article
+          h2 Parcurgerea unei matrice <small>deasupra diagonalei principale</small>
+          pre
+            code.c for (int i=0; i&lt;n; i++) &#10;&#09;for (int j=0; j&lt;n; j++) &#10;&#09;&#09;if (i&lt;j) &#10;&#09;&#09&#09;&lt;prelucreaza a[i][j]>
+          pre
+            code.c for (int i=0; i&lt;n; i++) &#10;&#09;&lt;prelucreaza a[i][n-1-i]>
+
+        article
+          h2 Interschimbarea a 2 linii
+          pre
+            code.c do cin >> L1 >> L2; &#10;while (L1&lt;0 || L1>m-1 || L2&lt;0 || L2>m-1); &#10;for (int j=0; j&lt;n; j++) { &#10;&#09;temp = a[L1][j]; &#10;&#09;a[L1][j] = a [L2][j]; &#10;&#09;a[L2][j] = temp; &#10;}
+
+        article
+          h2 Interschimbarea a 2 coloane
+          pre
+            code.c do cin >> C1 >> C2; &#10;while (C1&lt;0 || C1>n-1 || C2&lt;0 || C2>n-1); &#10;for (int j=0; j&lt;n; j++) { &#10;&#09;temp = a[i][C1]; &#10;&#09;a[i][C1] = a [Li][C2]; &#10;&#09;a[i][C2] = temp; &#10;}
+
+        article
+          h2 Construirea unei matrice <small>in memorie</small>
+          pre
+            code.c #include &lt;iostream> &#10;using namespace std; &#10; &#10;int main() { &#10;&#10;int a[15][15], m, n; &#10;&#10;// citeste dimensiunile matricei &#10;cout &lt;&lt; "Dati numarul de linii m si numarul de coloane n: "; &#10;cin >> m >> n; &#10;&#10;// complereaza prima linie &#10;for (int i=0; i&lt;n; i++) &#10;&#09;a[0][i] = i; &#10;&#10;// complereaza prima coloana &#10;for (int i=0; i&lt;n; i++) &#10;&#09;a[i][0] = i; &#10;&#10;// complereaza restul elementelor &#10;for (int i=0; i&lt;n; i++) &#10;&#09;for (int j=0; j&lt;m; j++) &#10;&#09;&#09;a[i][j] = a[i][j-1] + a[i-1][j]; &#10;&#10;// afiseaza matricea construita &#10;cout &lt;&lt; "Matricea este: " &lt;&lt; endl; &#10;for (int i=0; i&lt;m; i++) { &#10;&#09;for (int j=0; j&lt;n; j++) &#10;&#09;&#09;cout &lt;&lt; a[i][j] &lt;&lt; " "; &#10;&#09;cout &lt;&lt; endl; &#10;} &#10;&#10;return 0; &#10;}
+          small Matricea este:
+          table
+            tr
+              td 0
+              td 1
+              td 2
+              td 3
+              td 4
+            tr
+              td 1
+              td 2
+              td 4
+              td 7
+              td 11
+            tr
+              td 2
+              td 4
+              td 8
+              td 15
+              td 26
+            tr
+              td 3
+              td 7
+              td 15
+              td 30
+              td 56
+
+      article
+        h1 Tipul structura
+        p În C++ există un tip de date, numit struct, care permite mai multe campuri de tipuri diferite numite înregistrari.
+        pre
+          code.c struct &lt;id_structura> { &#10;&#09;&lt;tip_1> &lt;lc_1> &#10;&#09;&lt;tip_2> &lt;lc_2> &#10;&#09;&lt;tip_3> &lt;lc_3> &#10;&#09;. &#10;&#09;. &#10;&#09;. &#10;&#09;&lt;tip_n> &lt;lc_n> &#10;}
+        small ex:
+        pre
+          code.c struct prod { &#10;&#09;char den[20]; &#10;&#09;float pret, val; &#10;&#09;int cant; &#10;} pr1, pr2;
+
+        article
+          h2 Asignarea unui nume
+          pre
+            code.c typedef &lt;tip> &lt;mune_tip>
+          small ex:
+          pre
+            code.c typedef struct { &#10;&#09;char den[20]; &#10;&#09;float pret, val; &#10;&#09;int cant; &#10;} TPROD; &#10; &#10;TPROD pr; &#10;TPROD v[24];
+          p Accesul la capmul unei structuri se face cu "."
+          pre
+            code.c &lt;var>.&lt;camp>
+          small ex:
+          pre
+            code.c pr.den, pr.val, pr.pret, pr.cant; &#10;v[i].den, v[i].pret
+
+        article
+          h2 Campuri de tip structura
+          pre
+            code.c typedef struct { &#10;&#09;int ziua, luna, anul; &#10;} TDATA; &#10; &#10;typedef struct { &#10;&#09;char den[20]; &#10;&#09;float pret, val; &#10;&#09;int cant; &#10;&#09;TDATA data_in; &#10;} TPROD; &#10; &#10;int main() { &#10;&#09;TPROD p[50], pr; &#10;}
+          pre
+            code.c pr.data_in.anul; &#10;p[i].data_in.ziua;
+
+
+    footer#footer
+      hr
+      .links
+        a(href="about.html") About
+        | &middot;
+        a(href="https://github.com/danielFerecatu/mdi",target="_blank") GitHub
+      p Copyright &copy; Daniel Ferecatu.
+    #fab.up
+    script(src="js/jquery-1.11.2.min.js")
+    script(src="js/script.js")
+    script(src="js/matrix.js")
+    script(src="js/highlight.cpp.js")
+    script hljs.initHighlightingOnLoad();

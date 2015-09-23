@@ -1,0 +1,11 @@
+pre.lang-pseudo
+  code citește n
+     | n1 &#8592; n
+     | inv &#8592; 0
+     | cât timp n1&#8800;0 execută
+     |     inv &#8592; inv*10 + n1%10
+     |     n1 &#8592; [n/10]
+     | dacă inv=n atunci
+     |     scrie 'este palindrom'
+     | altfel
+     |     scrie 'nu este'

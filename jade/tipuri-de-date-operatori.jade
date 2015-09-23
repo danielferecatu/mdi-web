@@ -1,0 +1,74 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-01-30") Ian 30, 2015
+    h1 Tipuri de date și operatori
+    p C++ este un limbaj de programare care a apărut prin extinderea limbajului C la începutul anilor ’80 de către Bjarne Stroustrup și care, pe lângă posibilitatea programării structurate, oferă și pe cea a programării orientată pe obiecte.
+
+  article
+    h2 Tipuri de date
+    ol
+      li Numeric (întreg și real)
+      li Caracter/șir de caractere
+      li Logic (boolean)
+
+  article
+    h2 Tipuri de operatori
+    .buggy
+      a(href="#operatori-aritmetici") Aritmetici
+      a(href="#operatori-relationali") Relaționali
+      a(href="#operatori-logici") Logici
+      a(href="#operatori-atribuire") Atribuire
+
+    article#operatori-aritmetici
+      h2 1. Aritmetici
+      ol
+        li operatori unari #[code.git +], #[code.git -], #[code.git !] <small>(actionează pe un singur operand)</small>
+        li operatori binari #[code.git *], #[code.git /], #[code.git %]
+      p #[code.git *] - operator binar de înmulțire
+      p #[code.git a/b] - returnează câtul întreg al împărțirii, dacă #[code.git a] și #[code.git b] sunt întregi; returnează câtul real al împărțirii dacă cel puțin unul dintre operanzi este real
+      small ex:
+      include ./code/post-1/ex-1.jade
+      p #[code.git %] - returneaza restul impartirii lui a la b; operator binar care se aplica pe operanzi intregi
+      small ex:
+      include ./code/post-1/ex-2.jade
+
+    article#operatori-relationali
+      h2 2. Relationali
+      p Operatori binari care se aplica pe operanzi aritmetici, logici, caracter/sir de caractere, iar rezultatul este de tip logic; se executa in ordine de la stanga la dreapta.
+      p #[code.git &lt;], #[code.git &lt;=], #[code.git >], #[code.git >=], #[code.git ==], #[code.git !=]
+
+    article#operatori-logici
+      h2 3. Logici
+      p Operatori care se aplica pe operanzi logici, rezultatul fiind tot logic.
+      ul
+        li negatia logica #[code.git !] <small>(operator unar)</small>
+        li conjunctia logica "si" #[code.git &amp;&amp;]
+        li disjunctia logica "sau" #[code.git ||]
+      
+      h3 Legile lui DeMorgan
+      p #[code !(a &amp;&amp; b) = !a || !b]
+      p #[code !(a || b) = !a &amp;&amp; !b]
+
+      h3 Tabele de adevar
+      include ./code/post-1/table-adev.jade
+
+    article#operatori-atribuire
+      h2 4. Atribuire
+      p Operator binar care se evalueaza de la dreapta la stanga la fel ca si operatorii unari (#[code.git +], #[code.git -], #[code.git !]); se evalueaza expresia, iar rezultatul este atribuit variabilei.
+      include ./code/post-1/ex-3.jade
+      p <u>Expresiile</u> sunt combinatii valide de operatori si date; se evalueaza de la stanga la dreapta, ordinea putand fi modificata doar cu ajutorul parantezelor.
+
+    article
+      h2 Ordinea de prioritate a operatiilor
+      ol
+        li functiile
+        li operatorii unari ( #[code.git +], #[code.git -], #[code.git !] )
+        li operatorii multiplicativi ( #[code.git *], #[code.git /], #[code.git %] )
+        li operatorii aditivi ( #[code.git +], #[code.git -] )
+        li operatorii relationali ( #[code.git &lt;], #[code.git &lt;=], #[code.git >], #[code.git >=], #[code.git ==], #[code.git !=] )
+        li conjunctia logica "si" ( #[code.git &amp;&amp;] )
+        li disjunctia logica "sau" ( #[code.git ||] )
+        li operatorul de atribuire ( #[code.git =] )

@@ -1,0 +1,37 @@
+.dropDown
+
+	.d
+		display: none
+
+.dropHeader
+	min-height: 48px
+	line-height: 48px
+	color: rgba(0, 0, 0, 0.87)
+	user-select: none
+
+.dropContent
+	display: none
+
+.expand, .swap
+	width: 48px
+	min-height: 48px
+	max-height: 96px
+	float: right
+	background-size: 24px
+	background-repeat: no-repeat
+	background-position: center
+	border-radius: 25%
+	background-color: transparent
+	transition: all 160ms ease-out
+
+
+.expand
+	background-image: url(../img/ic_expand_more_24px.svg)
+
+	&.less
+		transform: rotateZ(-180deg)
+.swap
+	background-image: url(../img/ic_swap_horiz_24px.svg)
+
+	&.rtl
+		transform: rotateY(-180deg)

@@ -1,0 +1,55 @@
+ul.index-navigation
+  display: flex
+  flex-direction: column
+  align-content: strech
+  padding: 0
+
+  li
+    margin: 8px 0px
+    padding: 4px 0px
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+  .details
+    width: 280px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    color: $secondary-text-color
+    font-size: 14px
+
+    .category
+      padding-left: 52px
+      position: relative
+      min-height: 20px
+
+      &:before
+        content: 'category:'
+        font-size: 12px
+        // line-height: 20px
+        position: absolute
+        left: 0px
+
+    span:hover
+        cursor: pointer
+        color: $primary-text-color
+
+  a
+    width: 440px
+    padding-right: 20px
+    text-align: right
+    box-sizing: border-box
+    font:
+      size: 22px
+    line-height: 40px
+
+  time
+    font:
+      size: 11px
+      weight: bold
+    line-height: 20px
+    opacity: .55
+    letter-spacing: .5px
+    text-transform: uppercase
+    color: $secondary-text-color

@@ -1,0 +1,21 @@
+pre.c
+  code #include &lt;string.h>
+     | 
+     | strcat(&lt;sir1>,&lt;sir2>);
+     | strncat(&lt;sir1>,&lt;sir2>,&lt;nr>);
+pre.c
+  code #include &lt;iostream>
+     | #include &lt;string.h>
+     | using namespace std;
+     | int main() {
+     |   char s[80];
+     |   strcpy(s,"PROGRAM");
+     |   strcat(s,"CONCATENARE");
+     |   cout << s << endl;
+     |   strncat(s,"1234567890",8);
+     |   cout << s;
+     | }
+
+pre.console.nohighlight
+  code PROGRAMCONCATENARE
+     | PROGRAMCONCATENARE12345678

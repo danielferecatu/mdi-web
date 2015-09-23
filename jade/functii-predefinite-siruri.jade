@@ -1,0 +1,30 @@
+extends ./layout.jade
+
+block content
+
+  header
+    time(datetime="2015-04-03") Mar 04, 2015
+    h1 Functii predefinite pentru șiruri
+
+
+  article        
+    h2 1. Atribuirea între șiruri
+    include ./code/post-10/ex-1.jade
+
+  article        
+    h2 2. Lungimea șirului
+    include ./code/post-10/ex-2.jade
+
+  article        
+    h2 3. Concatenarea șirurilor
+    include ./code/post-10/ex-3.jade
+    p Sirul rezultat in urma concatenarii va fi returnat de catre functie prin intermediul #[code.git &lt;sir1>]
+
+  article        
+    h2 4. Compararea șirurilor
+    include ./code/post-10/ex-4.jade
+    p Functiile returneaza urmatoarele:
+      ul
+        li valoare &lt; 0 dacă sir1 &lt; sir2
+        li valoare = 0 dacă sir1 = sir2
+        li valoare > 0 dacă sir1 > sir2

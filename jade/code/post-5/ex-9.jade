@@ -1,0 +1,9 @@
+pre.c
+  code do cin >> L1 >> L2;
+     | while (L1&lt;0 || L1>m-1 || L2&lt;0 || L2>m-1);
+     | 
+     | for (int j=0; j&lt;n; j++) {
+     |     int temp = a[L1][j];
+     |     a[L1][j] = a [L2][j];
+     |     a[L2][j] = temp;
+     | }

@@ -1,0 +1,22 @@
+pre.c
+  code #include &lt;string.h>
+     | 
+     | strcpy(&lt;sir1>,&lt;sir2>);
+     | strncpy(&lt;sir1>,&lt;sir2>,&lt;nr>);
+pre.c
+  code #include &lt;iostream>
+     | #include &lt;string.h>
+     | using namespace std;
+     | int main() {
+     | char s[79], t[31], u[12];
+     | 
+     | strcpy(s,"EXEMPLU");
+     | strcpy(t,s);
+     | strncpy(u,s,2);
+     | 
+     | cout << s << endl << t << endl << u;
+     | }
+pre.console.nohighlight
+  code EXEMPLU
+     | EXEMPLU
+     | EX

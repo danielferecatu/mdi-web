@@ -1,0 +1,26 @@
+pre.lang-pseudo
+  code citește n
+     | prim &#8592; 1
+     | d &#8592; 2
+     | cât timp (d&lt;=|sqrt(n)| și prim) execută
+     |     dacă n%d=0 atunci
+     |         prim &#8592; 0
+     |     altfel
+     |         d &#8592; d+1
+pre.lang-pseudo
+  code citește n
+     | prim &#8592; 1
+     | d &#8592; 3
+     | dacă n>2 atunci
+     |     dacă n%2=0 atunci
+     |         prim &#8592; 0
+     |     altfel
+     |         cât timp (d&lt;=|sqrt(n)| si prim) execută
+     |             dacă n%d=0 atunci
+     |                 prim &#8592; 0
+     |             altfel
+     |                 d &#8592; d+2
+     |     dacă prim atunci
+     |         scrie 'este prim'
+     |     atfel
+     |         scrie 'nu este prim'

@@ -1,0 +1,32 @@
+.buggy
+	width: 100%
+	height: 50px
+	padding: 0px
+	margin: 0px
+
+	display: flex
+	flex-wrap: wrap
+	flex-direction: row
+	justify-content: flex-start
+	align-items: center
+
+	border-bottom: 1px solid rgba(0, 0, 0, .12)
+	list-style: none
+	background-color: white
+
+	a
+		border-bottom: 3px solid transparent
+		color: rgba(0, 0, 0, .54)
+		text-transform: uppercase
+		font-size: 14px
+		font-weight: 600
+		padding: 0px 24px
+		line-height: 50px
+
+		&:hover
+			border-bottom: 3px solid lighten($accent-color, 10%)
+			text-decoration: none
+			color: $primary-text-color
+
+		&:focus
+      text-decoration: none

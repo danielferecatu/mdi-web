@@ -1,0 +1,83 @@
+h1
+    code.git
+        font-size: inherit
+        color: inherit
+
+// inline codeblocks
+code
+    margin: 0px 0px
+    padding: 2px 2px
+    color: $accent-color
+    font-family: monospace
+    font-size: inherit
+    line-height: inherit
+    vertical-align: baseline
+
+
+code.git
+    margin: 0px 2px
+    padding: 2px 2px
+    color: $primary-text-color
+    background-color: rgba(0, 0, 0, 0.04)
+    border-radius: 2px
+    font-family: monospace
+    vertical-align: baseline
+
+// multi-line codeblocks
+pre
+    padding: 24px 0px 0px 0px
+    position: relative
+    // 12px margin used in flip functionality
+    // DON'T MODIFY !
+    margin: 12px 0
+
+    &:before
+        top:  0px
+        left: 0px
+        position: absolute
+        font-size: 12px
+        line-height: 16px
+        color: $secondary-text-color
+
+    &.lang-pseudo
+        &:before
+            content: 'pseudocod'
+        code
+            display: block
+            border-left: 4px solid $divider-color
+            padding: 8px 8px 8px 8px
+            color: $primary-text-color
+            background-color: whitesmoke
+            overflow: overlay
+
+
+    &.c
+        &:before
+            content: 'C++'
+        code
+            display: block
+            border-left: 4px solid $primary-color
+            padding: 8px 8px 8px 8px
+            color: $primary-text-color
+            background-color: whitesmoke
+            overflow: overlay
+
+
+    &.console
+        &:before
+            content: 'console'
+        code
+            display: block
+            border-left: 4px solid black
+            padding: 8px 8px 8px 8px
+            color: $primary-text-color
+            background-color: transparent
+            overflow: overlay
+            font-weight: bold
+
+    &.lang-pseudo code, &.c code
+        display: block
+        padding: 8px 8px 8px 8px
+        color: $primary-text-color
+        background-color: whitesmoke
+        overflow: overlay

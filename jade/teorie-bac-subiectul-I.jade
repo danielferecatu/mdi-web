@@ -1,0 +1,276 @@
+doctype html
+html(lang="ro")
+  head
+    title= "mdi - (c)"
+    meta(charset="utf-8")
+    meta(name="author",content="Daniel Ferecatu")
+    meta(name="viewport",content="width=device-width,initial-scale=1")
+    link(href="css/index.css",rel="stylesheet",type="text/css")
+    link(rel="icon",type="image/png",href="img/favicon.png")
+  body
+    header#header
+      a(href="index.html").logo
+        img(src="img/logo.png",width="48",height="48", alt="logo")
+        span.prompt Read more posts
+
+    main#main
+      header
+        time(datetime="2015-01-30") Ian 30, 2015
+        h1 Teorie BAC C++ subiectul I
+        p C++ este un limbaj de programare care a apărut prin extinderea limbajului C la începutul anilor ’80 de către Bjarne Stroustrup și care, pe lângă posibilitatea programării structurate, oferă și pe cea a programării orientată pe obiecte.
+
+      article
+        h1 Tipuri de date
+        ol
+          li Numeric (întreg și real)
+          li Caracter/șir de caractere
+          li Logic (boolean)
+
+      article
+        h1 Tipuri de operatori
+        .buggy
+          a(href="#operatori-aritmetici") Aritmetici
+          a(href="#operatori-relationali") Relationali
+          a(href="#operatori-logici") Logici
+          a(href="#operatori-atribuire") Atribuire
+
+        article#operatori-aritmetici
+          h1 1. Aritmetici
+          ol
+            li operatori unari <code class="git">+</code>, <code class="git">-</code>, <code class="git">!</code> <small>(actioneaza pe un singur operand)</small>
+            li operatori binari <code class="git">*</code>, <code class="git">/</code>, <code class="git">%</code>
+          p <code class="git">*</code> - operator binar de inmultire
+          p <code class="git">a/b</code> - returneaza catul intreg al impartirii, daca <code class="git">a</code> si <code class="git">b</code> sunt intregi; returneaza catul real al impartirii daca cel putin unul dintre operanzi este real
+          small ex:
+          pre
+            code.c 7 /2 = 3&#10;7./2 = 3.5 &#10;7 /2.= 3.5&#10;7./2.= 3.5
+          p <code class="git">%</code> - returneaza restul impartirii lui a la b; operator binar care se aplica pe operanzi intregi
+          small ex:
+          pre
+            code.c 7 % 2 = 1
+
+        article#operatori-relationali
+          h1 2. Relationali
+          p Operatori binari care se aplica pe operanzi aritmetici, logici, caracter/sir de caractere, iar rezultatul este de tip logic; se executa in ordine de la stanga la dreapta.
+          p <code class="git">&lt;</code>, <code class="git">&lt;=</code>, <code class="git">></code>, <code class="git">>=</code>, <code class="git">==</code>, <code class="git">!=</code>
+
+        article#operatori-logici
+          h1 3. Logici
+          p Operatori care se aplica pe operanzi logici, rezultatul fiind tot logic.
+          ul
+            li negatia logica <code class="git">!</code> <small>(operator unar)</small>
+            li conjunctia logica "si" <code class="git">&amp;&amp;</code>
+            li disjunctia logica "sau" <code class="git">||</code>
+          
+          h2 Legile lui DeMorgan
+          p <code>!(a &amp;&amp; b) = !a || !b</code>
+          p <code>!(a || b) = !a &amp;&amp; !b</code>
+
+          h2 Tabele de adevar
+          table.tflex
+            tr
+              td 
+                code &amp;&amp;
+              td A
+              td F
+            tr
+              td A
+              td A
+              td F
+            tr
+              td F
+              td F
+              td F
+          table.tflex
+            tr
+              td 
+                code ||
+              td A
+              td F
+            tr
+              td A
+              td A
+              td A
+            tr
+              td F
+              td A
+              td F
+          table.tflex
+            tr
+              td a
+              td A
+              td F
+            tr
+              td !a
+              td F
+              td A
+
+        article#operatori-atribuire
+          h1 4. Atribuire
+          p Operator binar care se evalueaza de la dreapta la stanga la fel ca si operatorii unari (<code class="git">+</code>, <code class="git">-</code>, <code class="git">!</code>); se evalueaza expresia, iar rezultatul este atribuit variabilei.
+          pre
+            code.lang-pseudo variabila = expresie
+          p <u>Expresiile</u> sunt combinatii valide de operatori si date; se evalueaza de la stanga la dreapta, ordinea putand fi modificata doar cu ajutorul parantezelor.
+
+        article
+          h1 Ordinea de prioritate a operatiilor
+          ol
+            li functiile
+            li operatorii unari ( <code class="git">+</code>, <code class="git">-</code>, <code class="git">!</code> )
+            li operatorii multiplicativi ( <code class="git">*</code>, <code class="git">/</code>, <code class="git">%</code> )
+            li operatorii aditivi ( <code class="git">+</code>, <code class="git">-</code> )
+            li operatorii relationali ( <code class="git">&lt;</code>, <code class="git">&lt;=</code>, <code class="git">></code>, <code class="git">>=</code>, <code class="git">==</code>, <code class="git">!=</code> )
+            li conjunctia logica "si" ( <code class="git">&amp;&amp;</code> )
+            li disjunctia logica "sau" ( <code class="git">||</code> )
+            li operatorul de atribuire ( <code class="git">=</code> )
+      
+      article
+        h1 Teorema lui Böhm Jacopini
+        p Orice algoritm poate fi descris cu ajutorul a 3 structuri de control:
+        ol
+          li Structura liniara (secventiala)
+          li Structura alternativa (decizionala)
+          li Structura repetitiva
+
+
+        .buggy
+          a(href="#structura-liniara") Liniara
+          a(href="#structura-alternativa") Alternativa
+          a(href="#structura-repetitiva") Repetitiva
+
+        article#structura-liniara
+          h1 1. Structura liniara
+          p Structura de control care se executa neconditionat in ordinea din algoritm.
+          ol.a
+            li instructiunea de <u>citire</u>
+              pre
+                code.lang-pseudo citeste v1, v2, v3, ..., vn;
+              pre
+                code.c cin >> v1, v2, v3, ..., vn;
+            li instructiunea de <u>scriere</u>
+              pre
+                code.lang-pseudo scrie p1, p2, p3, ..., pn;
+              pre
+                code.c cout &lt;&lt; p1, p2, p3, ..., pn;
+            li instructiunea de <u>atribuire</u>
+              pre
+                code.lang-pseudo var &#8592; expresie;
+              pre
+                code.c var = expresie;
+            li instructiunea <u>compusa</u>
+              pre
+                code.lang-pseudo inceput &#10;&#09;instructiune 1; &#10;&#09;instructiune 2; &#10;&#09;instructiune 3; &#10;&#09;. &#10;&#09;. &#10; &#09;.&#10;&#09;instructiune n; &#10;sfarsit;
+              pre
+                code.c { &#10;&#09;instructiune 1; &#10;&#09;instructiune 2; &#10;&#09;instructiune 3; &#10;&#09;. &#10;&#09;. &#10;&#09;. &#10;&#09;instructiune <span class="hljs-number">n</span>; &#10;};
+
+        article#structura-alternativa
+          h1 2. Structura alternativa
+          p Structura de control care executa conditionat o instructiune din 2 posibile in functie de valoarea de adevar a unei expresii.
+          pre
+            code.lang-pseudo daca (&lt;expresie>) atunci S1; &#10;&#09;&#09;&nbsp;[altfel S2;] - clauza optionala
+          pre
+            code.c if (&lt;expresie>) { &#10;&#09;S1; &#10;} &#10;else { &#10;&#09;S2; &#10;};
+
+        article#structura-repetitiva
+          h1 3. Structura repetitiva
+
+          h3 I. Numar necunoscut de pasi
+          p Structura de control care executa repetat o secventa de instructiuni de un numar necunoscut de ori cat timp expresia este adevarata.
+
+          h4 a) Structura repetitiva cu test initial
+          pre
+            code.lang-pseudo cat timp (&lt;expresie>) executa &#10;&#09;secventa de instructiuni;
+          pre
+            code.c while (&lt;expresie>) { &#10;&#09;secventa de instructiuni; &#10;};
+          p <u>obs</u> - secventa se executa cat timp conditia este indeplinita; daca expresia este falsa de la inceput, secventa nu se executa.
+
+          h4 b) Structura repetitiva cu test final
+          pre
+            code.lang-pseudo executa &#10;&#09;secventa de instructiuni; &#10;cat timp (&lt;expresie>)
+          pre
+            code.c do { &#10;&#09;secventa de instructiuni; &#10;} while (&lt;expresie>);
+          p <u>obs</u> - secventa se executa cat timp conditia este indeplinita; daca expresia este falsa de la inceput, secventa se executa o singura data.
+          p Doua structuri repetitive sunt echivalente cand pentru aceleasi date de intrare se obtin aceleasi date de iesire.
+          p <u>obs</u> - structara repetitiva cu test initial poate fi transformata in structura cu test final si invers
+
+          .dropDown
+            .dropHeader
+              span.expand
+              span.swap
+              p.u Structura cu test initial &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test final
+              p.d Structura cu test final &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test initial
+            .dropContent.u
+              pre
+                code.lang-pseudo cat timp (&lt;expresie>) executa &#10;&#09;secventa de instructiuni;
+              pre
+                code.lang-pseudo daca (&lt;expresie>) atunci &#10;&#09;executa &#10;&#09;&#09;secventa de instructiuni; &#10;&#09;cat timp (&lt;expresie>)
+              pre
+                code.c while (&lt;expresie>) { &#10;&#09;secventa de instructiuni; &#10;};
+              pre
+                code.c if (&lt;expresie>) { &#10;&#09;do secventa de instructiuni; &#10;&#09;while (&lt;expresie>); &#10;};
+            .dropContent.d
+              pre
+                code.lang-pseudo executa &#10;&#09;secventa de instructiuni; &#10;cat timp (&lt;expresie>)
+              pre
+                code.lang-pseudo secventa de instructiuni; &#10;cat timp (&lt;expresie>) executa &#10;&#09;secventa de instructiuni;
+              pre
+                code.c do secventa de instructiuni; &#10;while (&lt;expresie>);
+              pre
+                code.c secventa de instructiuni; &#10;while (&lt;expresie>) &#10;&#09;secventa de instructiuni;
+
+
+          h3 II. Numar cunoscut de pasi
+
+          h4 a) Cu contor in crestere <code class="git">(vi &lt;= vf)</code>
+          pre
+            code.lang-pseudo pentru (contor &#8592; vi,vf; [&lt;pas v>]) executa &#10;&#09;secventa de instructiuni;
+          pre
+            code.c for (contor = vi; contor &lt;=vf; contor++) { &#10;&#09;secventa de instructiuni; &#10;};
+          p <u>obs</u> - variabila <code class="git">contor</code> isi modifica valoarea de la <code class="git">vi</code> la <code class="git">vf</code> cu <code class="git">pas v > 0</code>; implicit <code class="git">pas v = 1</code>; daca <code class="git">vi > vf</code> secventa nu se executa niciodata.
+
+          h4 b) Cu contor in descrestere <code class="git">(vi >= vf)</code>
+          pre
+            code.lang-pseudo pentru (contor &#8592; vi,vf; [&lt;pas v>]) executa &#10;&#09;secventa de instructiuni;
+          pre
+            code.c for (contor = vi; contor >=vf; contor--) { &#10;&#09;secventa de instructiuni; &#10;};
+          p <u>obs</u> - variabila <code class="git">contor</code> isi modifica valoarea de la <code class="git">vi</code> la <code class="git">vf</code> cu <code class="git">pas v &lt; 0</code>; implicit <code class="git">pas v = -1</code>; daca <code class="git">vi &lt; vf</code> secventa nu se executa niciodata.
+
+          .dropDown
+            .dropHeader
+              span.expand
+              span.swap
+              p.u Structura contor &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test initial
+              p.d Structura contor &nbsp;&nbsp; &gt; &nbsp;&nbsp; Structura cu test final
+            .dropContent.u
+              pre
+                code.lang-pseudo pentru (i &#8592; vi, vf) executa &#10;&#09;secventa de instructiuni;
+              pre
+                code.lang-pseudo i &#8592; vi; &#10;cat timp (i &lt;= vf) executa &#10;&#09;secventa de instructiuni; &#10;&#09;i &#8592; i+1;
+              pre
+                code.c for ( i=vi; i&lt;=vf; i++ ) &#10;&#09;secventa de instructiuni;
+              pre
+                code.c i=vi; &#10;while ( i&lt;=vf ) { &#10;&#09;secventa de instructiuni; &#10;&#09;i++; &#10;}
+            .dropContent.d
+              pre
+                code.lang-pseudo pentru (i &#8592; vi, vf) executa &#10;&#09;secventa de instructiuni;
+              pre
+                code.lang-pseudo i &#8592; vi; &#10;daca i &lt;= vf atunci &#10;&#09;executa &#10;&#09;&#09;secventa de instructiuni; &#10;&#09;&#09;i &#8592; i+1; &#10;&#09;cat timp (i &lt;= vf)
+              pre
+                code.c for ( i=vi; i&lt;=vf; i++ ) &#10;&#09;secventa de instructiuni;
+              pre
+                code.c i=vi; &#10;if ( i&lt;=vf ) { &#10;&#09;do { &#10;&#09;&#09;secventa de instructiuni; &#10;&#09;&#09;i++; &#10;&#09;} &#10;&#09;while ( i&lt;=vf ); &#10;}
+
+          p <u>obs</u> - o structura repetiviva cu numar necunoscut de pasi nu se poate transforma intr-o structura cu numar cunoscut de pasi, invers da.
+          
+    footer#footer
+      hr
+      .links
+        a(href="about.html") About
+        | &middot;
+        a(href="https://github.com/danielFerecatu/mdi",target="_blank") GitHub
+      p Copyright &copy; Daniel Ferecatu.
+    #fab.up
+    script(src="js/jquery-1.11.2.min.js")
+    script(src="js/script.js")
+    script(src="js/highlight.cpp.js")
+    script hljs.initHighlightingOnLoad();
